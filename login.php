@@ -23,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION['username'] = $user['username'];
 
         //Redirect to dashboard or another page
-        header("Location: dashboard.php");
+        header("Location: index.html");
         exit();
     } else {
         // Login failed, show error message
