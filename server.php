@@ -1,16 +1,19 @@
 <?php
 
 // Connection to MySQL Database
-$servername = "maindatabase-do-user-14617775-0.c.db.ondigitalocean.com:25060";
+$hostname = "maindatabase-do-user-14617775-0.c.db.ondigitalocean.com";
 $username = "doadmin";
 $password = "AVNS_YBXx_wRxNMxSxTUV_I_";
 $dbname = "webstack";
+$port = "25060";
 
-$con = new mysqli_connect($servername, $username, $password, $dbname);
+$con = new mysqli_connect($hostname, $username, $password, $dbname, $port);
 
-mysqli_select_db($dbname, $con)
+mysqli_select_db($dbname, $con);
 
 if ($con->connect_error) {
-    die("Connection failed: " . $con->connect_error);
+    error_log("Connection failed: " . $con->connect_error);
+    exit();
 }
+
 ?>
