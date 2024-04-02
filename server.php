@@ -7,12 +7,12 @@ $password = "AVNS_YBXx_wRxNMxSxTUV_I_";
 $dbname = "webstack";
 $port = "25060";
 
-$con = new mysqli_connect($hostname, $username, $password, $dbname, $port);
+$conn = new mysqli_connect($hostname, $username, $password, $dbname, $port);
 
-mysqli_select_db($dbname, $con);
+mysqli_select_db($dbname, $conn);
 
-if ($con->connect_error) {
-    error_log("Connection failed: " . $con->connect_error);
+if ($conn->connect_error) {
+    error_log("Connection failed: " . $conn->connect_error);
     exit();
 }
 

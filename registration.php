@@ -52,7 +52,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt->bind_param("sssss", $username, $email, $hashed_password, $first_name, $last_name);
         if ($stmt->execute()) {
             // Registration successful, redirect to login page or another page
-            header("Location: login.php");
+            header("Location: login.html");
             exit();
         } else {
             // Error inserting data into database
