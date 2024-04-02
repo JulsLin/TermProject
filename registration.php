@@ -1,19 +1,21 @@
 <?php
 
-include_once 'server.php';
+
 
 //Initialize variables to store error messages
 $errors = [];
 
 // Check if form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+    include 'server.php';
     // Validate form data
-    $username = trim($_POST['username']);
-    $email = trim($_POST['email']);
-    $password = trim($_POST['password']);
-    $confirm_password = trim($_POST['confirm_password']);
-    $first_name = trim($_POST['first_name']);
-    $last_name = trim($_POST['last_name']);
+    $username = $_POST['username'];
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+    $confirm_password = $_POST['confirm_password'];
+    $first_name = $_POST['first_name'];
+    $last_name = $_POST['last_name'];
 
     // Validate username
     if (empty($username)) {
