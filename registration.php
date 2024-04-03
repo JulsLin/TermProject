@@ -39,7 +39,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Validate first name and last name
     if (empty($first_name) || empty($last_name)) {
-        $error['name'] = "First name and Last name are required.";
+        $errors['name'] = "First name and Last name are required.";
     }
 
     // If no validation errors, proceed to hash password and insert into database
@@ -54,7 +54,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt->bind_param("sssss", $username, $email, $hashed_password, $first_name, $last_name);
         if ($stmt->execute()) {
             // Registration successful, redirect to login page or another page
-            header("Location: login.html");
+            header("Location: database.php");
             exit();
         } else {
             // Error inserting data into database
